@@ -168,6 +168,9 @@ def backfill(
 # CLI
 # ─────────────────────────────────────────────────────────────
 def main():
+    # Always run from the repo root (the folder this script lives in)
+    os.chdir(Path(__file__).parent)
+
     today  = datetime.date.today()
     jan1   = today.replace(month=1, day=1)
     yesterday = today - datetime.timedelta(days=1)

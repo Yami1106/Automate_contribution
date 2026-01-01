@@ -248,6 +248,9 @@ def paint_day(date: datetime.date, shade: int, art_dir: Path):
 # MAIN
 # ─────────────────────────────────────────────────────────────
 def main():
+    # Always run from the repo root (the folder this script lives in)
+    os.chdir(Path(__file__).parent)
+
     today = datetime.date.today()
 
     # Default anchor = most recent Sunday in the past
