@@ -1,0 +1,42 @@
+# Daily Contribution Workflow
+# Runs automate.py every day at noon UTC.
+#
+# NO PAT REQUIRED.
+# GitHub attributes commits to your account by the author email in git config.
+# As long as user.email matches your verified GitHub email, every commit
+# counts on your contribution graph -- no Personal Access Token needed.
+
+name: Daily Art and Contribution
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # noon UTC every day
+  workflow_dispatch:         # allow manual trigger from the Actions tab
+
+jobs:
+  daily:
+    name: Evolve commit push
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write        # needed to push commits
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # IMPORTANT: this email must match your verified GitHub account email
+      - name: Configure git identity
+        run: |
+          git config user.email "ashish11062003@gmail.com"
+          git config user.name  "Yami1106"
+
+      - name: Run daily automation
+        run: python automate.py
