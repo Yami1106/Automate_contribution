@@ -1,51 +1,69 @@
-<div align="center">
+# Sine Wave Interference Art -- Day 1
 
-<pre>
-╔═══════════════════════════════╗
-║     🤖  Automate_contribution  🤖     ║
-╚═══════════════════════════════╝
-</pre>
-
-## Daily GitHub Contribution Automator
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
-
-</div>
+> This repository runs three generative art engines in rotation,
+> committed automatically every day via GitHub Actions -- forever.
 
 ---
 
-## About
+## Today's Output  --  Day 1
 
-An automation system that generates and commits **generative art** to this repository every single day via GitHub Actions — keeping the contribution graph green all year and producing something visually interesting.
+**Date:** `2026-05-13`
 
----
+```
+##*++|::::||+*####**+|||||||++*****++++++++++++|||||++***##*
+**+||::::|+**####*++|::::||+*####**+|||||||+++**++++++++++++
+|||:::::||+++**++|::....:|++****+||:....::|++***++||:::::|||
+:||||:::::::::::::.....::||+++||:..    .:||++++|::.    ..:||
++++||::......:::::::::::::::::::......::||+++||:.     .:||++
+***+|:.....:||++*+++||::::::|||||||||||||+++|||::...::|++***
+#*++|:::::|+*#####*+|:::::|++******++|||||+++++++++++++*****
++++||||||+**####**+|::::||+*#####*+||:::||++******++++++++++
+|||||||||+++++++||::::::|++*****+|:....:||+**#**+||:::::||++
+|+++||::::::::::::::::::|||||||::..  ..:||+++++|:.    ..:|++
++++|::.    ..::|||||:::...:::::::....:::|||||::..    .::|+++
+*++|:..  ..:|++**++|::.....:|||++||||:::::|||::::::::||+++++
+*+||:::::|++*###**+|::..::|+**##**+||::::||+++++++++++++++++
+++++++++++***#***+||:::||+*#####*+||::::|+**####**+||||||+++
+++*+++++|||+++++||||||||++*****+||::.::|++*###**+|::..::|+**
+++++||::....::||||||||:::||||||:::...::||+++++|:..   .:||+**
+++||:.     .:||+++||:.......:::::::::::::::::::......::||+++
++||:..   .:||+**++|:..   ..:|+++++|:::...::::|||::::::||||||
+```
 
-## Features
-
-- Three rotating modes: Conway's Life, Wave Interference, Mandelbrot Zoom
-- 4 commits per day for dark-green contribution graph shading
-- README auto-updates with latest ASCII art frame
-- Backfill script for past dates, pixel-art graph painter
-
----
-
-## Tech Stack
-
-**Python** · **GitHub Actions**
-
----
-
-## Tags
-
-`Automation`  `GitHub Actions`  `Generative Art`  `ASCII Art`
-
----
-
-## Author
-
-**Ashish (Yami1106)**
-[GitHub](https://github.com/Yami1106) · [Portfolio](https://yamiportfolio.netlify.app/)
+Three sine waves with **irrational frequency ratios** (`4.0`, `2.718 ~ e`, `3.141 ~ pi`) interfere and beat against each other.  
+Phase advances `0.25 rad` per day -- the pattern shifts and **never exactly repeats** due to the irrational ratios.
 
 ---
 
-*Generated with [Automate_contribution](https://github.com/Yami1106/Automate_contribution)*
+## Mode Rotation
+
+Modes cycle: Life -> Waves -> Fractal -> Life -> ...
+
+| Day | Mode |
+|-----|------|
+| Day 1 | waves |  <- today
+| Day 2 | fractal |
+| Day 3 | life |
+| Day 4 | waves |
+| Day 5 | fractal |
+| Day 6 | life |
+
+---
+
+## How It Works
+
+1. **GitHub Actions** runs `.github/workflows/daily.yml` every day at noon UTC
+2. `automate.py` reads `life_state.json`, picks today's mode (`day % 3`),
+   advances that engine by one step, and regenerates this README
+3. `4` commits are pushed per day for solid dark-green shading on the graph
+4. All three engines are **infinite** -- they never run out of new content
+
+| Mode | Engine | Why infinite |
+|------|--------|--------------|
+| Life | Conway's Game of Life | Toroidal grid, auto-restarts if stagnant |
+| Waves | Sine wave interference | Irrational frequency ratios, no exact period |
+| Fractal | Mandelbrot zoom | Fractal detail is mathematically infinite |
+
+---
+
+*Auto-updated daily -- [Workflow](.github/workflows/daily.yml) -- [Script](automate.py)*
