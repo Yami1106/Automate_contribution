@@ -361,6 +361,9 @@ def has_changes():
 # -----------------------------------------------------------------
 
 def main():
+    # Always run from the repo root regardless of where the script is called from
+    os.chdir(Path(__file__).parent)
+
     print("-" * 56)
     print("  Daily Contribution Automator")
     print("  {}".format(datetime.date.today().isoformat()))
