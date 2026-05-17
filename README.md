@@ -1,40 +1,36 @@
-# Mandelbrot Set Zoom -- Day 2
+# Conway's Game of Life -- Generation #2
 
 > This repository runs three generative art engines in rotation,
 > committed automatically every day via GitHub Actions -- forever.
 
 ---
 
-## Today's Output  --  Day 5
+## Today's Output  --  Day 6
 
-**Date:** `2026-05-16`
+**Date:** `2026-05-17`
 
 ```
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                  .+                        
-                               ...:@.: .                    
-                              :@@@@@@@@-                    
-                        .:@@@:@@@@@@@@@@                    
-                       .@@@@@@@@@@@@@@@=                    
-                         =.=..@@@@@@@@@@                    
-                               +@@@@@@+=                    
-                                  @@.                       
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
+·███··██·█·█····█···██···█···········█·······███·█··
+██████·····█····█···█··███·█······█···█·······█·····
+···█······██····█····███···████████···█··█·····███··
+··█········█·█···██····█·██··███·██····█········████
+··█·█···███···██····█·█████··█········████·█████···█
+█···█·█···█···█·····█·██····██·█·██········█··██····
+··█···█·█·····███·█···██····██·█████·······█████···█
+··█·█··███·····█·······█·······████·········██·█···█
+██··█······██···█···███·█···██·····█··█······█·█·██·
+····█····█··█···········█··████████···█········██···
+█··█·█···█·········█······██·██····█·██·······█··█·█
+█·█···█··█·························█·····██···█·····
+··█···████·······██·█·█······█·····██··█··███·█···██
+█·███··██████·██·█··█····█████·······█········██····
+████····█····█·█·████··██····█·······█··█·····████·█
 ```
 
-Zooming into **Seahorse Valley** (`-0.7269 + 0.1889i`).  
-Current zoom level: `2.35e+00` (shrinks 3% per day).  
-After one full year the zoom is `~0.016%` of the original view -- **fractal detail is mathematically infinite**.
+**Alive cells:** `265` / `780` (34.0 %)  
+**Restarts:** `0`
+
+Grid uses **toroidal wrapping** so patterns wrap around edges. Auto-restarts if it reaches a still life or dies out.
 
 ---
 
@@ -44,12 +40,12 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 
 | Day | Mode |
 |-----|------|
-| Day 5 | fractal |  <- today
-| Day 6 | life |
+| Day 6 | life |  <- today
 | Day 7 | waves |
 | Day 8 | fractal |
 | Day 9 | life |
 | Day 10 | waves |
+| Day 11 | fractal |
 
 ---
 
