@@ -27,7 +27,10 @@ from pathlib import Path
 # -----------------------------------------------------------------
 STATE_FILE      = "life_state.json"
 README_FILE     = "README.md"
-COMMITS_PER_DAY = 4          # 1 = light green | 4-5 = dark green
+
+commits = random.randint(10,20)
+
+COMMITS_PER_DAY = commits #4          # 1 = light green | 4-5 = dark green
 
 LIFE_W,  LIFE_H  = 52, 15   # Conway grid size
 WAVE_W,  WAVE_H  = 60, 18   # Wave art canvas size
