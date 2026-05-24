@@ -1,36 +1,37 @@
-# Conway's Game of Life -- Generation #4
+# Sine Wave Interference Art -- Day 5
 
 > This repository runs three generative art engines in rotation,
 > committed automatically every day via GitHub Actions -- forever.
 
 ---
 
-## Today's Output  --  Day 12
+## Today's Output  --  Day 13
 
-**Date:** `2026-05-23`
+**Date:** `2026-05-24`
 
 ```
-█···········██····██·███·█·█·█·█·······█········█···
-█····█···█··█·······█···██·██·██····█·········█·██··
-██········█··██···········█·█·██·███·███····███···██
-·········█·······█········██·············██··██·····
-··█······█·······██·······██··········█···█··█······
-··█····██·████··█···█····█·█··█·······█·███·····██··
-··█···█······██·██······██··█·█················██·█·
-··█·██·█···█·█·█·····██·██··█··············█··██·█··
-·█··········██······███·█·█····█·█·██·······█··█··██
-······█·█···█·······██·███·····█······██·····█·█·█··
-········█··········██····██████···············█·█··█
-·······██··█·······██········██··█····█··█·█·██·····
-█·█····█·█···█████······█·········██·····█·█··██···█
-█·····██··██·█·█····█··██····██····█··█····█·····█··
-·········██······███·██····█·██·····█··█········█··█
+|::.....::||++++||:.    .::|++*++|:..   ..:||+++||::::::::::
+|+++|||||+++++++||:::::||+*****++|:....:|++*##**+||::.::||++
+*##***++||||+++++++++++++******++||::||+**####**+|::::|++*##
+###*++|::::||+******+++||||+++++++||++++*****++||::::|+**###
+*++|:.. ..::|+****+||:....::||++++||||:::||||||:::::|||+++++
+|::..   ..:||++++|:.     .::|++++|::..  ...::||||:::::::::::
+::::::::::||||||::..   ..:|+++++|:.     .:||++++|::......:::
+++++++|||||||||||||:::|||+++*++||:....::|+*****+|::....:|++*
+###**++||:|||++*****+++++++++++++|||||++**##**++|::::||+*###
+##**+|::::||+**###**++||||||+++***+++++++++++++||||||++*####
+++||:....:|++*****+|:....::|++***++||:::::|||||||||||||++++|
+:::.....::||+++||:..    .:||++++||:.    ..:||+++||::.....:::
+:::::::::::::::::.......:||+++||:..    .::|++++|::.    ..:||
++++++||:::::::||||||||||||||||||::...::||+***++|:.. ..::|+**
+###*+||::::||+******++||||||+++++++++++++****++||:::||+**###
+#**+|:::::|+*#####*++|:::||++******+++++++++++++++++++******
+++||:::::|++*****+|::...::|+**#**++|::::::|+++**+++|||||||||
+:::::::::|||||||::......:||+++++|:..   ..:|+++++||:......::|
 ```
 
-**Alive cells:** `215` / `780` (27.6 %)  
-**Restarts:** `0`
-
-Grid uses **toroidal wrapping** so patterns wrap around edges. Auto-restarts if it reaches a still life or dies out.
+Three sine waves with **irrational frequency ratios** (`4.0`, `2.718 ~ e`, `3.141 ~ pi`) interfere and beat against each other.  
+Phase advances `0.25 rad` per day -- the pattern shifts and **never exactly repeats** due to the irrational ratios.
 
 ---
 
@@ -40,12 +41,12 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 
 | Day | Mode |
 |-----|------|
-| Day 12 | life |  <- today
-| Day 13 | waves |
+| Day 13 | waves |  <- today
 | Day 14 | fractal |
 | Day 15 | life |
 | Day 16 | waves |
 | Day 17 | fractal |
+| Day 18 | life |
 
 ---
 
@@ -54,7 +55,7 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 1. **GitHub Actions** runs `.github/workflows/daily.yml` every day at noon UTC
 2. `automate.py` reads `life_state.json`, picks today's mode (`day % 3`),
    advances that engine by one step, and regenerates this README
-3. `20` commits are pushed per day for solid dark-green shading on the graph
+3. `13` commits are pushed per day for solid dark-green shading on the graph
 4. All three engines are **infinite** -- they never run out of new content
 
 | Mode | Engine | Why infinite |
