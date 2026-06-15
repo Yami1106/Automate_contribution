@@ -1,37 +1,40 @@
-# Sine Wave Interference Art -- Day 12
+# Mandelbrot Set Zoom -- Day 12
 
 > This repository runs three generative art engines in rotation,
 > committed automatically every day via GitHub Actions -- forever.
 
 ---
 
-## Today's Output  --  Day 34
+## Today's Output  --  Day 35
 
-**Date:** `2026-06-14`
+**Date:** `2026-06-15`
 
 ```
-|+*####*++||:::||++****+++++++++++++||||||++******+||::::||+
-*#####*++|::::|++*####**+||||||+++****+++++++++++++|||||++**
-+***++||:...:||+**##*++|:...::|++****++||::::|||++++++||||++
-::|:::::...::||++++||:..   ..:|++*++||:.   ..:||++++||::....
-..:::::::::::::::::::......::||+++|::.     .:||++++|:..    .
-::|+++++||::...:::|||||||::||||||||::....::||+++++|::.   .::
-+**###*++|::.::||+*****++||||||||++++++|++++++*+++||::::||+*
-*####**+|::::|++*#####*+||:::||+**##***++++|++++++++++++++**
-++++++||::::|++**##**+|::..::|+**###*++|:::::|++****+++|||||
-::::|||:::::||||||||::.....::|++**++|:..  ..:|++**++|::.....
-..:||||||:::....:::::::...:::|||||::..    .:||++++|:..     .
-:|+++++||:..  ..::|||||||::::::::::::::::::||+++||::.   ..:|
-+**#**+||:...::|+*****++|::::::||+++++++|||||||||||||:|||+++
-*****++||:::|++*#####*+||::::|+**####**+||||||++*****+++++++
-+++++++|||||++******++|::::||+*####**+|:::::|++*###**++|||||
-::|||+++|||||||||||||::::::||++++++|::.....:|+****++|:.....:
-.:||+++||:.......:::::::::::::::::::......::||+++|::.     .:
-||++++||:.    ..:||+++||::.....:::::::::::::||||:::......:||
+                                                            
+                                                            
+                                                            
+                                    ...                     
+                                   .@@:                     
+                               .:.@@@@@::..                 
+                              @-@@@@@@@@@@=                 
+                       .:-#-..@@@@@@@@@@@@@.                
+                     .::@@@@@@@@@@@@@@@@@@@                 
+                     ..:@@@@@@@@@@@@@@@@@@@                 
+                       .::+:..@@@@@@@@@@@@@.                
+                              @:@@@@@@@@@@.                 
+                               ...*@@@@@+..                 
+                                   .@@:                     
+                                    ...                     
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
 ```
 
-Three sine waves with **irrational frequency ratios** (`4.0`, `2.718 ~ e`, `3.141 ~ pi`) interfere and beat against each other.  
-Phase advances `0.25 rad` per day -- the pattern shifts and **never exactly repeats** due to the irrational ratios.
+Zooming into **Seahorse Valley** (`-0.7269 + 0.1889i`).  
+Current zoom level: `1.73e+00` (shrinks 3% per day).  
+After one full year the zoom is `~0.016%` of the original view -- **fractal detail is mathematically infinite**.
 
 ---
 
@@ -41,12 +44,12 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 
 | Day | Mode |
 |-----|------|
-| Day 34 | waves |  <- today
-| Day 35 | fractal |
+| Day 35 | fractal |  <- today
 | Day 36 | life |
 | Day 37 | waves |
 | Day 38 | fractal |
 | Day 39 | life |
+| Day 40 | waves |
 
 ---
 
@@ -55,7 +58,7 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 1. **GitHub Actions** runs `.github/workflows/daily.yml` every day at noon UTC
 2. `automate.py` reads `life_state.json`, picks today's mode (`day % 3`),
    advances that engine by one step, and regenerates this README
-3. `13` commits are pushed per day for solid dark-green shading on the graph
+3. `18` commits are pushed per day for solid dark-green shading on the graph
 4. All three engines are **infinite** -- they never run out of new content
 
 | Mode | Engine | Why infinite |
