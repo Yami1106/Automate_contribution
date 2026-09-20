@@ -1,40 +1,36 @@
-# Mandelbrot Set Zoom -- Day 44
+# Conway's Game of Life -- Generation #44
 
 > This repository runs three generative art engines in rotation,
 > committed automatically every day via GitHub Actions -- forever.
 
 ---
 
-## Today's Output  --  Day 131
+## Today's Output  --  Day 132
 
-**Date:** `2026-09-19`
+**Date:** `2026-09-20`
 
 ```
-                              .--*-@@@@@@@@@@@@@@@@@@@@@@@@@
-            ...     .       ....:@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            .-..:...-.........:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            ...:@@:@=@=%-:....=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-           .:.:@@@@@@@@@@@@:::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-       ......-@@@@@@@@@@@@@@##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-   ......:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-.:....:.:*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-       ..=:::+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-       ......:@@@@@@@@@@@@@@:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            ...:@@@@@@@@@@=..:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            ...:-:..:@.-......=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            ..... ..@..   ....%@#@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            .                ..+*@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                               .-.:%@@@@@@@@@@@@@@@@@@@@@@@@
-                                ...@@@@@@@@@@@@@@@@@@@@@@@@:
-                                 .:-::..:@:@+@@@@@@@@@@:@=..
-                                   .... .....:@@@@@@:....   
-                                          ...:@@@@@@:..     
-                                           ::-:=+@-:...     
+············█·····················█··········██··██·
+············███···██·······███··············█···██··
+·············██··██·······██··█·███··██······████···
+··············███··█······█···███···█··█······█████·
+···············███·█······█······█···██···········██
+█···············█··········█···█·██··············█·█
+█················································█··
+··················█·········██····█················█
+················██·█·········██···█·················
+················█··██···········█··██·█·········█·██
+·██·············██··············███·█············█··
+█·█··············██··············█·············█·██·
+██································█·····█······█··██
+█············██···················█····█·······██···
+············██·█···················█·········█·██··█
 ```
 
-Zooming into **Seahorse Valley** (`-0.7269 + 0.1889i`).  
-Current zoom level: `6.54e-01` (shrinks 3% per day).  
-After one full year the zoom is `~0.016%` of the original view -- **fractal detail is mathematically infinite**.
+**Alive cells:** `128` / `780` (16.4 %)  
+**Restarts:** `0`
+
+Grid uses **toroidal wrapping** so patterns wrap around edges. Auto-restarts if it reaches a still life or dies out.
 
 ---
 
@@ -44,12 +40,12 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 
 | Day | Mode |
 |-----|------|
-| Day 131 | fractal |  <- today
-| Day 132 | life |
+| Day 132 | life |  <- today
 | Day 133 | waves |
 | Day 134 | fractal |
 | Day 135 | life |
 | Day 136 | waves |
+| Day 137 | fractal |
 
 ---
 
@@ -58,7 +54,7 @@ Modes cycle: Life -> Waves -> Fractal -> Life -> ...
 1. **GitHub Actions** runs `.github/workflows/daily.yml` every day at noon UTC
 2. `automate.py` reads `life_state.json`, picks today's mode (`day % 3`),
    advances that engine by one step, and regenerates this README
-3. `19` commits are pushed per day for solid dark-green shading on the graph
+3. `20` commits are pushed per day for solid dark-green shading on the graph
 4. All three engines are **infinite** -- they never run out of new content
 
 | Mode | Engine | Why infinite |
