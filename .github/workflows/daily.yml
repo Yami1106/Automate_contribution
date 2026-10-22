@@ -11,12 +11,17 @@ name: Daily Art and Contribution
 on:
   schedule:
     - cron: "0 12 * * *"   # noon UTC every day
+    # Backup slots in case GitHub fails the noon run (runner outages, 5xx).
+    # automate.py skips itself if today's run already succeeded.
+    - cron: "0 16 * * *"
+    - cron: "0 20 * * *"
   workflow_dispatch:         # allow manual trigger from the Actions tab
 
 jobs:
   daily:
     name: Evolve commit push
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     permissions:
       contents: write        # needed to push commits

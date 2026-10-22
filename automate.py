@@ -373,6 +373,14 @@ def main():
     print("-" * 56)
 
     state     = load_state()
+
+    # Backup cron slots re-trigger the workflow; only the first successful run per UTC day does work
+    today_utc = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    if state.get("last_run") == today_utc:
+        print("  Already ran today ({}) -- nothing to do".format(today_utc))
+        return
+    state["last_run"] = today_utc
+
     state["total_day"] += 1
     total_day = state["total_day"]
     mode      = _MODE_ORDER[total_day % 3]
